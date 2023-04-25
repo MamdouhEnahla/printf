@@ -5,5 +5,8 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
-int _printf(const char *format, ...);
+int _wrtchar(char c);
+int printf_string(va_list vars);
+int printf_char(va_list vars);
+int printf_percent(void);
 #endif
