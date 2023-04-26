@@ -41,49 +41,45 @@ int printf_percent(void)
  * printf_string - writes a string to stdout
  * @vars: a va_list containing the string to write
  *
- * Return: for success return the number of bytes written, -1 Otherwise.
+ * Return: the number of bytes written, or -1.
  */
 int printf_string(va_list vars)
 {
-	int length, i;
+	int length = 0, i;
 	char *str;
 
 	str = va_arg(vars, char *);
 
-	if (str == NULL)
+	if (!str)
 	{
 		str = "(null)";
-		length = strlen(str);
+	}
+	for (i = 0; i < length; i++)
+		length += _putchar(str[i]);
 
-		for (i = 0; i < length; i++)
-			_putchar(str[i]);
-	}
-	else
-	{
-		length = strlen(str);
-		for (i = 0; i < length; i++)
-			_putchar(str[i]);
-	}
 	return (length);
 }
 
 /**
  * printf_int - writes an integer to stdout
- * @args: a va_list containing the integer to write
+ * @args: a va_list containing the integer to print
  *
- * Return: 1 for success
+ * Return: No. bytes written, or -1.
  */
 int printf_int(va_list args)
 {
-	long n = va_arg(vars, long);
-	unsigned long int un = n;
+	int count = 0;
+	int n = va_arg(args, int);
+	unsigned int unum = n;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		un = -n;
+		count += _putchar('-');
+		unum = -n;
 	}
-	if (un / 10)
-		printf_int(un / 10);
-	_putchar((un % 10) + 48);
+	if (unum / 10)
+		printf_int(unum / 10);
+	count += _putchar((unum % 10) + 48);
+
+	return (count);
 }

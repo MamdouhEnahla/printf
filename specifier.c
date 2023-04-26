@@ -10,11 +10,11 @@ int (*_specifier(char *frmt))(va_list args)
 {
 	int i = 0;
 	specifier_t specifiers[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-                {"d", print_int},
-                {"i", print_int},
+		{"c", printf_char},
+		{"s", printf_string},
+		{"%", printf_percent},
+                {"d", printf_int},
+                {"i", printf_int},
 	};
 
 	while (specifiers[i].specifier)
