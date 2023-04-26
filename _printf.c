@@ -1,5 +1,6 @@
 #include "main.h"
 
+<<<<<<< HEAD
 
 int _printf(const char *format, ...)
 {
@@ -32,4 +33,26 @@ int _printf(const char *format, ...)
     }
         va_end(ar);
         return (length);
+=======
+/**
+ * _printf - Check code.
+ * @format: format
+ *
+ * Return: No. printed chars or -1.
+ */
+int _printf(const char *format, ...)
+{
+	int count = 0;
+	va_list args;
+
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+
+	va_start(args, format);
+	// count++ case
+	va_end(args);
+
+	return (count);
+
+>>>>>>> a548dc4 (task0-1)
 }
