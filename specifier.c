@@ -13,8 +13,8 @@ int (*_specifier(char *frmt))(va_list args)
 		{"c", printf_char},
 		{"s", printf_string},
 		{"%", printf_percent},
-                {"d", printf_int},
-                {"i", printf_int},
+		{"d", printf_int},
+		{"i", printf_int}
 	};
 
 	while (specifiers[i].specifier)
