@@ -20,7 +20,6 @@ typedef struct specifier
 
 /*=======functions.c========*/
 int _putchar(char c);
-void _puts_recursive(char *str);
 int printf_string(va_list vars);
 int printf_char(va_list vars);
 int printf_percent(void);

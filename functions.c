@@ -12,19 +12,6 @@ int _putchar(char c)
 }
 
 /**
- * _puts_recursive - prints a string, followed by a new line
- * @str: a pointer to the string
- */
-void _puts_recursive(char *str)
-{
-	if (*str)
-	{
-		_putchar(*str);
-		_puts_recursive(str + 1);
-	}
-}
-
-/**
  * printf_char - writes a character to stdout
  * @vars: a va_list containing the character to write
  *

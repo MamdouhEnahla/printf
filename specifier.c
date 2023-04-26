@@ -15,7 +15,7 @@ int (*_specifier(char *frmt))(va_list args)
 		{"%", print_percent},
                 {"d", print_int},
                 {"i", print_int},
-	}
+	};
 
 	while (specifiers[i].specifier)
 	{
