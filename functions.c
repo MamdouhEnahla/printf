@@ -46,7 +46,7 @@ int printf_percent(va_list vars)
  */
 int printf_string(va_list vars)
 {
-	int length, i;
+	int length;
 	char *str;
 
 	str = va_arg(vars, char *);
@@ -56,8 +56,11 @@ int printf_string(va_list vars)
 		str = "(null)";
 	}
 	length = 0;
-	for (i = 0; str[i]; i++)
-		length += _putchar(str[i]);
+	while (*str)
+	{
+		_putchar(*str++);
+		length++;
+	}
 
 	return (length);
 }

@@ -23,6 +23,7 @@ int _putchar(char c);
 int printf_string(va_list vars);
 int printf_char(va_list vars);
 int printf_percent(va_list vars);
+int find_match(const char *format, match *m);
 
 /*=======_printf.c=========*/
 int _printf(const char *format, ...);
