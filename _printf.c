@@ -45,7 +45,7 @@ int _printf(const char * const format, ...)
 /**
  * find_match - Finds a match in the match array.
  * @format: Format specifier string.
- * @m: Match array
+ * @m: Match array.
  *
  * Return: Index of matching element, or -1 if no match is found.
  */

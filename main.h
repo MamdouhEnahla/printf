@@ -29,3 +29,4 @@ int find_match(const char *format, match *m);
 int _printf(const char *format, ...);
 
 #endif
+
