@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 /**
- * struct specifier - Specifier
+ * struct match - Specifier
  * @format: format
  * @f: The associated function
  */
