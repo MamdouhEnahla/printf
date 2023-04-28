@@ -33,6 +33,7 @@ int printf_char(va_list vars)
  */
 int printf_percent(va_list vars)
 {
+	(void) vars;
 	_putchar(37);
 	return (1);
 }
