@@ -52,12 +52,27 @@ int printf_string(va_list vars)
 	str = va_arg(vars, char *);
 
 	if (!str)
-	{
 		str = "(null)";
-	}
 	length = 0;
 	for (i = 0; str[i]; i++)
 		length += _putchar(str[i]);
 
 	return (length);
+}
+
+/**
+ * printf_int - writes an integer to the stdout
+ * @vars: a va_list containing the integer to print
+ *
+ * Return: the number of written bytes or -1.
+ */
+int printf_int(va_list vars)
+{
+	int i = 0, n_bytes = 0, num;
+
+	num = va_arg(vars, int);
+
+	n_bytes = print_num(num, n_bytes);
+
+	return (n_bytes);
 }

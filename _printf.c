@@ -11,18 +11,20 @@ int _printf(const char * const format, ...)
 		{"%s", printf_string},
 		{"%c", printf_char},
 		{"%%", printf_percent},
+		{"%d", printf_int},
+		{"%i", printf_int},
 	};
-	va_list arg;
+	va_list args;
 	int i = 0, count = 0, j = 0;
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	va_start(arg, format);
+	va_start(args, format);
 	while (format[i])
 	{
 		while (m[j].format[0] == format[i] && m[j].format[1] == format[i + 1])
 		{
-			count += m[j].f(arg);
+			count += m[j].f(args);
 			i += 2;
 			break;
 		}
@@ -30,6 +32,6 @@ int _printf(const char * const format, ...)
 		i++;
 	}
 
-	va_end(arg);
+	va_end(args);
 	return (count);
 }
