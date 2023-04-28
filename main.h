@@ -23,12 +23,13 @@ int _putchar(char c);
 int printf_string(va_list vars);
 int printf_char(va_list vars);
 int printf_percent(va_list vars);
-int printf_int(va_list vars);
 
 /*=======functions1.c=======*/
 int print_num(int n, int call);
+int printf_int(va_list vars);
 
 /*=======_printf.c=========*/
 int _printf(const char *format, ...);
+int find_match(const char *format, match *m);
 
 #endif

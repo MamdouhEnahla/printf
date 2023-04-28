@@ -35,3 +35,23 @@ int _printf(const char * const format, ...)
 	va_end(args);
 	return (count);
 }
+
+/**
+ * find_match - Finds a match in the match array.
+ * @format: Format specifier string.
+ * @m: Match array.
+ *
+ * Return: Index of matching element, or -1 if no match is found.
+ */
+int find_match(const char *format, match *m)
+{
+	int i = 0;
+
+	while (m[i].format)
+	{
+		if (format[0] == m[i].format[0] && format[1] == m[i].format[1])
+			return (i);
+		i++;
+	}
+	return (-1);
+}

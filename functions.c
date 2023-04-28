@@ -59,20 +59,3 @@ int printf_string(va_list vars)
 
 	return (length);
 }
-
-/**
- * printf_int - writes an integer to the stdout
- * @vars: a va_list containing the integer to print
- *
- * Return: the number of written bytes or -1.
- */
-int printf_int(va_list vars)
-{
-	int i = 0, n_bytes = 0, num;
-
-	num = va_arg(vars, int);
-
-	n_bytes = print_num(num, n_bytes);
-
-	return (n_bytes);
-}
