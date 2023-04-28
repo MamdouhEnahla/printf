@@ -28,10 +28,10 @@ int printf_char(va_list vars)
 
 /**
  * printf_percent - writes the percent sign to stdout
- *
+ * @vars: a parameter aligned with the struct param type
  * Return: 1 for success.
  */
-int printf_percent(void)
+int printf_percent(va_list vars)
 {
 	_putchar(37);
 	return (1);
@@ -45,7 +45,7 @@ int printf_percent(void)
  */
 int printf_string(va_list vars)
 {
-	int length = 0, i;
+	int length, i;
 	char *str;
 
 	str = va_arg(vars, char *);
@@ -54,32 +54,9 @@ int printf_string(va_list vars)
 	{
 		str = "(null)";
 	}
-	for (i = 0; i < length; i++)
+	length = 0;
+	for (i = 0; str[i]; i++)
 		length += _putchar(str[i]);
 
 	return (length);
-}
-
-/**
- * printf_int - writes an integer to stdout
- * @args: a va_list containing the integer to print
- *
- * Return: No. bytes written, or -1.
- */
-int printf_int(va_list args)
-{
-	int count = 0;
-	int n = va_arg(args, int);
-	unsigned int unum = n;
-
-	if (n < 0)
-	{
-		count += _putchar('-');
-		unum = -n;
-	}
-	if (unum / 10)
-		printf_int(unum / 10);
-	count += _putchar((unum % 10) + 48);
-
-	return (count);
 }
