@@ -31,7 +31,7 @@ int print_num(int n, int call)
  */
 int printf_int(va_list vars)
 {
-	int i = 0, n_bytes = 0, num;
+	int n_bytes = 0, num;
 
 	num = va_arg(vars, int);
 
