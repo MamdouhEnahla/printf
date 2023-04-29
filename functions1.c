@@ -17,7 +17,7 @@ int print_num(int n, int call)
 		un = -n;
 	}
 	if (un / 10)
-		print_number(un / 10, call++);
+		print_num(un / 10, call++);
 	call += _putchar((un % 10) + 48);
 
 	return (call);
