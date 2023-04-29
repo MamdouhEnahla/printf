@@ -12,6 +12,7 @@ int _printf(const char * const format, ...)
 		{"%s", printf_string},
 		{"%c", printf_char},
 		{"%%", printf_percent},
+		{"%i", printf_int},
 		{NULL, NULL}
 	};
 	va_list arg;
